@@ -1,28 +1,32 @@
-
 {% comment %} HTML Code {% endcomment %}
 
-<img scr="{{section.settings.image | image_url}}" alt="none">
+<div class="image" {{ block.shopify_attributes }}>
+    {{ section.settings.parallax | image_url: width: 2048 | image_tag }}
+  </div>
+
 
 {% comment %} {{section.settings.parallax-grid | img_url}} {% endcomment %}
 
 {% comment %} Schema {% endcomment %}
 {% schema %}
 {
-  "name": "parallax",
+  "name": "Parallax",
+  "tag": "section",
   "settings": [
     {
-      "id": "image",
+        
       "type": "image_picker",
+      "id": "parallax",
       "label": "Pick Parallax Image"
     }
   ],
-  "templates": ["index"],
   "presets": [
     {
-      "name": "Parallax Image",
+      "name": "Parallax",
       "category": "Parallax"
     }
-  ]
+  ],
+  "templates": ["index"]
 }
 {% endschema %}
 
