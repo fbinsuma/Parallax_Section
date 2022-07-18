@@ -1,0 +1,28 @@
+
+{% comment %} HTML Code {% endcomment %}
+
+<img scr="{{section.settings.image | image_url}}" alt="none">
+
+{% comment %} {{section.settings.parallax-grid | img_url}} {% endcomment %}
+
+{% comment %} Schema {% endcomment %}
+{% schema %}
+{
+  "name": "parallax",
+  "settings": [
+    {
+      "id": "image",
+      "type": "image_picker",
+      "label": "Pick Parallax Image"
+    }
+  ],
+  "templates": ["index"],
+  "presets": [
+    {
+      "name": "Parallax Image",
+      "category": "Parallax"
+    }
+  ]
+}
+{% endschema %}
+
