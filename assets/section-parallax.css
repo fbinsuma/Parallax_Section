@@ -1,0 +1,27 @@
+.featured { 
+
+    position: relative !important; 
+  
+    background-size: cover !important; 
+  
+    background-position: center !important; 
+  
+    background-repeat: no-repeat !important; 
+  
+    background-attachment: fixed !important; 
+  
+    height: 800px; 
+  
+    overflow: hidden; 
+  
+  } 
+  
+  @media (max-width: 767px) { 
+  
+    .featured { 
+  
+      font-size: 16px; 
+  
+    } 
+  
+  }
