@@ -1,32 +1,32 @@
+{{ 'section-parallax.css' | asset_url | stylesheet_tag }}
+
 {% comment %} HTML Code {% endcomment %}
 
-<div class="image" {{ block.shopify_attributes }}>
-    {{ section.settings.parallax | image_url: width: 2048 | image_tag }}
-  </div>
+<div class="featured lazy" style="background: url({% if section.settings.parallax %}{{ section.settings.parallax | img_url: 'master' }}{% else %}<p>Choose Image</p>{% endif %})">
 
+</div>
 
-{% comment %} {{section.settings.parallax-grid | img_url}} {% endcomment %}
 
 {% comment %} Schema {% endcomment %}
 {% schema %}
-{
-  "name": "Parallax",
-  "tag": "section",
-  "settings": [
     {
-        
-      "type": "image_picker",
-      "id": "parallax",
-      "label": "Pick Parallax Image"
+        "name": "Parallax",
+        "tag": "section",
+        "settings": [
+            {
+                
+            "type": "image_picker",
+            "id": "parallax",
+            "label": "Pick Parallax Image"
+            }
+        ],
+        "presets": [
+            {
+            "name": "Parallax",
+            "category": "Parallax"
+            }
+        ],
+        "templates": ["index"]
     }
-  ],
-  "presets": [
-    {
-      "name": "Parallax",
-      "category": "Parallax"
-    }
-  ],
-  "templates": ["index"]
-}
 {% endschema %}
 
